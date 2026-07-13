@@ -51,7 +51,7 @@ def print_user_info(name, age, account_index, status):
     print(f"Status: {status}\n")
 
 
-def print_report():
+def print_report(users_amount, premium_users_counter, basic_users_counter):
     print("\n----------REPORT----------\n"
           f"Total users: {users_amount}\n"
           f"Premium users: {premium_users_counter}\n"
@@ -73,7 +73,7 @@ if users_amount.isdigit():
             status = check_account_status(age)
             update_account_counter(status)
             print_user_info(name, age, i, status)
-        print_report()
+        print_report(users_amount, premium_users_counter, basic_users_counter)
     else:
         print("Invalid number of users.")
 else:
