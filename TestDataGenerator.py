@@ -22,23 +22,25 @@ MIN_AGE = 0
 PREMIUM_AGE = 30
 premium_users_counter = 0
 basic_users_counter = 0
-
+PREMIUM_USERS = "Premium"
+BASIC_USERS = "Basic"
+STATUS_UNKNOWN = "Unknown"
 
 def check_account_status(age):
     if PREMIUM_AGE <= age < MAX_AGE:
-        return "Premium"
+        return PREMIUM_USERS
     elif MIN_AGE < age < PREMIUM_AGE:
-        return "Basic"
+        return BASIC_USERS
     else:
-        return "Status unknown"
+        return STATUS_UNKNOWN
 
 
 def update_account_counter(status):
     global premium_users_counter, basic_users_counter
 
-    if status == "Premium":
+    if status == PREMIUM_USERS:
         premium_users_counter += 1
-    elif status == "Basic":
+    elif status == BASIC_USERS:
         basic_users_counter += 1
     else:
         return
